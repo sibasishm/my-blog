@@ -5,8 +5,10 @@ import Layout from '../components/Layout';
 
 const Home = () => (
 	<Layout>
-		<h1>Hi, I am Sibasish.</h1>
-		<p>I am a full stack developer based in Bengaluru, India.</p>
+		<h1 className="font-medium">
+			Hi, I am Sibasish,{' '}
+			<span>a full stack developer based in Bengaluru, India.</span>
+		</h1>
 		<p>
 			Need a hand in your web project?{' '}
 			<Link to="/contact">Contact me</Link>.

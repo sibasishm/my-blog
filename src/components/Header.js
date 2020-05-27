@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 const Header = () => (
 	<header>
-		<h1>
+		<h1 className="text-4xl tracking-wider">
 			<Link to="/">Sibasish M</Link>
 		</h1>
 		<nav>
