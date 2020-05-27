@@ -10,6 +10,7 @@ const Contact = () => (
 			href="https://twitter.com/smsibasish"
 			target="_blank"
 			rel="noreferrer"
+			className="btn btn-blue"
 		>
 			Twitter
 		</a>
