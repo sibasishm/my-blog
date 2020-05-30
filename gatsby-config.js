@@ -5,13 +5,14 @@ module.exports = {
 		description: 'My blog website'
 	},
 	plugins: [
-		`gatsby-plugin-postcss`,
+		'gatsby-plugin-postcss',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'src',
 				path: `${__dirname}/src/`
 			}
-		}
+		},
+		'gatsby-transformer-remark'
 	]
 };
