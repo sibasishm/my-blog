@@ -1,10 +1,18 @@
 module.exports = {
 	siteMetadata: {
-		siteMetadata: {
-			title: 'Siabsish',
-			siteUrl: '',
-			description: 'My blog website'
-		}
+		title: 'The Righter',
+		author: 'Siabsish Mohanty',
+		description: 'My blog website'
 	},
-	plugins: [`gatsby-plugin-postcss`]
+	plugins: [
+		'gatsby-plugin-postcss',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'src',
+				path: `${__dirname}/src/`
+			}
+		},
+		'gatsby-transformer-remark'
+	]
 };
