@@ -9,7 +9,7 @@ module.exports = {
 		extend: {},
 		fontFamily: {
 			display: ['DM Serif Display', 'Georgia', 'serif'],
-			body: ['Inter', 'Arial', 'sans-serif']
+			body: ['Rubik', 'Arial', 'sans-serif']
 		}
 	},
 	variants: {},
