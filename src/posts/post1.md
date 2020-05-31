@@ -10,4 +10,4 @@ I am the first post
 
 1. Hello
 2. Hi World
-3. Gofbye world
+3. Good bye world
