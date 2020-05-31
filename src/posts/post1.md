@@ -6,6 +6,8 @@ description: 'lorem ipsum dolor dolreimu'
 
 I am the first post
 
+![City light and a tram](./post1-header.jpg)
+
 ## Some title
 
 1. Hello
