@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-remark-images": "^3.3.8",
     "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-source-contentful": "^2.3.14",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-transformer-remark": "^2.8.13",
     "react": "^16.12.0",
