@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Head from '../components/Head';
 
 const Blog = () => {
 	const data = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const Blog = () => {
 
 	return (
 		<Layout>
+			<Head title="Blog" />
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
 			{data.allContentfulBlogPost.edges.length > 0 ? (

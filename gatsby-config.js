@@ -9,6 +9,7 @@ module.exports = {
 		description: 'My blog website'
 	},
 	plugins: [
+		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
 		{
 			resolve: 'gatsby-source-contentful',

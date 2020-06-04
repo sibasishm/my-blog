@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Head from '../components/Head';
 
 const Home = () => (
 	<Layout>
+		<Head title="Home" />
 		<h1 className="font-medium">
 			Hi, I am Sibasish,{' '}
 			<span>a full stack developer based in Bengaluru, India.</span>
