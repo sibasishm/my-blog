@@ -1,3 +1,7 @@
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
 	siteMetadata: {
 		title: 'The Righter',
@@ -5,14 +9,14 @@ module.exports = {
 		description: 'My blog website'
 	},
 	plugins: [
+		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
 		{
-			resolve: 'gatsby-source-filesystem',
+			resolve: 'gatsby-source-contentful',
 			options: {
-				name: 'src',
-				path: `${__dirname}/src/`
+				spaceId: process.env.CONTENTFUL_SPACE_ID,
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 			}
-		},
-		'gatsby-transformer-remark'
+		}
 	]
 };
