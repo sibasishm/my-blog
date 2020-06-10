@@ -21,10 +21,19 @@ const Blog = ({ data }) => {
 	const options = {
 		renderNode: {
 			'embedded-asset-block': ({ data }) => {
-				const alt = data.target.fields.title['en-US'];
-				const url = data.target.fields.file['en-US'].url;
+				const image = data.target.fields;
+				if (!image) {
+					return null;
+				}
+				const alt = image.title['en-US'];
+				const url = image.file['en-US'].url;
 
-				return <img src={url} alt={alt} />;
+				return (
+					<figure>
+						<img src={url} alt={alt} />
+						<figcaption>{alt}</figcaption>
+					</figure>
+				);
 			}
 		}
 	};

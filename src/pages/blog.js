@@ -36,9 +36,11 @@ const Blog = () => {
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
 			{data.allContentfulBlogPost.edges.length > 0 ? (
-				data.allContentfulBlogPost.edges.map(({ node }) => (
-					<Card key={node.id} data={node} />
-				))
+				<div className="grid gap-4 grid-cols-1 lg:gap-6">
+					{data.allContentfulBlogPost.edges.map(({ node }) => (
+						<Card key={node.id} data={node} />
+					))}
+				</div>
 			) : (
 				<p>There are no blog posts yet. Come back later!</p>
 			)}
