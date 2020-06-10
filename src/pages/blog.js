@@ -1,8 +1,9 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Head from '../components/Head';
+import Card from '../components/Card';
 
 const Blog = () => {
 	const data = useStaticQuery(graphql`
@@ -17,6 +18,12 @@ const Blog = () => {
 						slug
 						summary
 						publishedDate(formatString: "MMM Do, YYYY")
+						coverImage {
+							file {
+								url
+							}
+							title
+						}
 					}
 				}
 			}
@@ -29,17 +36,9 @@ const Blog = () => {
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
 			{data.allContentfulBlogPost.edges.length > 0 ? (
-				<ol>
-					{data.allContentfulBlogPost.edges.map(({ node }) => (
-						<li key={node.id}>
-							<Link to={`/blog/${node.slug}`}>
-								<h2>{node.title}</h2>
-								<p>{node.publishedDate}</p>
-								<p>{node.summary}</p>
-							</Link>
-						</li>
-					))}
-				</ol>
+				data.allContentfulBlogPost.edges.map(({ node }) => (
+					<Card key={node.id} data={node} />
+				))
 			) : (
 				<p>There are no blog posts yet. Come back later!</p>
 			)}

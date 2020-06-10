@@ -3,7 +3,7 @@
 @tailwind base;
 
 body {
-    @apply text-gray-900 font-body;
+    @apply antialiased text-gray-900 font-body bg-gray-100;
 }
 
 h1 {
