@@ -5,22 +5,20 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
 	const res = await graphql(`
 		query {
-			allContentfulBlogPost {
-				edges {
-					node {
-						slug
-					}
+			allStrapiBlogs {
+				nodes {
+					slug
 				}
 			}
 		}
 	`);
 
-	res.data.allContentfulBlogPost.edges.forEach(({ node }) => {
+	res.data.allStrapiBlogs.nodes.forEach(({ slug }) => {
 		createPage({
 			component: blogTemplate,
-			path: `/blog/${node.slug}`,
+			path: `/blog/${slug}`,
 			context: {
-				slug: node.slug
+				slug
 			}
 		});
 	});

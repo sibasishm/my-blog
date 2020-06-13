@@ -4,38 +4,41 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 
-const Blog = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			allContentfulBlogPost(
-				sort: { fields: publishedDate, order: DESC }
-			) {
-				edges {
-					node {
-						id
-						title
-						slug
-						summary
-						publishedDate(formatString: "MMM Do, YYYY")
-					}
+const query = graphql`
+	query GetAllBlogs {
+		allStrapiBlogs {
+			nodes {
+				id
+				slug
+				title
+				publishedDate(formatString: "MMM Do, YYYY")
+				summary
+				coverImage {
+					absolutePath
 				}
 			}
 		}
-	`);
+	}
+`;
 
+const Blog = () => {
+	const data = useStaticQuery(query);
+	const {
+		allStrapiBlogs: { nodes: blogs }
+	} = data;
 	return (
 		<Layout>
 			<Head title="Blog" />
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
-			{data.allContentfulBlogPost.edges.length > 0 ? (
+			{blogs.length > 0 ? (
 				<ol>
-					{data.allContentfulBlogPost.edges.map(({ node }) => (
-						<li key={node.id}>
-							<Link to={`/blog/${node.slug}`}>
-								<h2>{node.title}</h2>
-								<p>{node.publishedDate}</p>
-								<p>{node.summary}</p>
+					{blogs.map(blog => (
+						<li key={blog.id}>
+							<Link to={`/blog/${blog.slug}`}>
+								<h2>{blog.title}</h2>
+								<p>{blog.publishedDate}</p>
+								<p>{blog.summary}</p>
 							</Link>
 						</li>
 					))}

@@ -12,10 +12,11 @@ module.exports = {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
 		{
-			resolve: 'gatsby-source-contentful',
+			resolve: 'gatsby-source-strapi',
 			options: {
-				spaceId: process.env.CONTENTFUL_SPACE_ID,
-				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+				apiURL: 'http://localhost:1337',
+				queryLimit: 1000,
+				contentTypes: ['blogs']
 			}
 		}
 	]

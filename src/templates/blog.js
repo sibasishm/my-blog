@@ -1,45 +1,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import ReactMarkdown from 'react-markdown';
 
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 
 export const query = graphql`
-	query($slug: String) {
-		contentfulBlogPost(slug: { eq: $slug }) {
+	query GetABlog($slug: String) {
+		blog: strapiBlogs(slug: { eq: $slug }) {
 			title
-			publishedDate(formatString: "MMM Do, YYYY")
-			body {
-				json
-			}
+			content
 		}
 	}
 `;
 
-const Blog = ({ data }) => {
-	const options = {
-		renderNode: {
-			'embedded-asset-block': ({ data }) => {
-				const alt = data.target.fields.title['en-US'];
-				const url = data.target.fields.file['en-US'].url;
-
-				return <img src={url} alt={alt} />;
-			}
-		}
-	};
-
-	const title = data.contentfulBlogPost.title;
-
+const Blog = ({ data: { blog } }) => {
+	const { title, content } = blog;
 	return (
 		<Layout>
 			<Head title={title} />
-			<h1>{title}</h1>
-			<p>Posted on: {data.contentfulBlogPost.publishedDate}</p>
-			{documentToReactComponents(
-				data.contentfulBlogPost.body.json,
-				options
-			)}
+			<section>
+				<h1>{title}</h1>
+				<p>Posted on: {data.contentfulBlogPost.publishedDate}</p>
+				<article>
+					<ReactMarkdown source={content} />
+				</article>
+			</section>
 		</Layout>
 	);
 };
