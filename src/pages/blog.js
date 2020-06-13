@@ -15,7 +15,11 @@ const query = graphql`
 				publishedDate(formatString: "MMM Do, YYYY")
 				summary
 				coverImage {
-					absolutePath
+					childImageSharp {
+						fluid {
+							...GatsbyImageSharpFluid
+						}
+					}
 				}
 			}
 		}
@@ -33,11 +37,11 @@ const Blog = () => {
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
 			{blogs.length > 0 ? (
-				<div className="grid gap-4 grid-cols-1 lg:gap-6">
+				<section className="grid gap-4 grid-cols-1 lg:gap-6">
 					{blogs.map(blog => (
-						<Card key={blog.id} data={blog} />
+						<Card key={blog.id} {...blog} />
 					))}
-				</div>
+				</section>
 			) : (
 				<p>There are no blog posts yet. Come back later!</p>
 			)}

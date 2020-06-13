@@ -21,7 +21,6 @@ const Blog = ({ data: { blog } }) => {
 			<Head title={title} />
 			<section>
 				<h1>{title}</h1>
-				<p>Posted on: {data.contentfulBlogPost.publishedDate}</p>
 				<article>
 					<ReactMarkdown source={content} />
 				</article>

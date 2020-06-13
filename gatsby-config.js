@@ -9,6 +9,8 @@ module.exports = {
 		description: 'My blog website'
 	},
 	plugins: [
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-sharp',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
 		{
