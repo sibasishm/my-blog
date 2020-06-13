@@ -7,7 +7,7 @@ import Card from '../components/Card';
 
 const query = graphql`
 	query GetAllBlogs {
-		allStrapiBlogs(sort:{fields: publishedDate, order: DESC}) {
+		allStrapiBlogs(sort: { fields: publishedDate, order: DESC }) {
 			nodes {
 				id
 				slug
@@ -32,23 +32,10 @@ const Blog = () => {
 			<Head title="Blog" />
 			<h1>This is my blog page.</h1>
 			<p>All the blog posts will be listed here.</p>
-<<<<<<< HEAD
 			{blogs.length > 0 ? (
-				<ol>
-					{blogs.map(blog => (
-						<li key={blog.id}>
-							<Link to={`/blog/${blog.slug}`}>
-								<h2>{blog.title}</h2>
-								<p>{blog.publishedDate}</p>
-								<p>{blog.summary}</p>
-							</Link>
-						</li>
-=======
-			{data.allContentfulBlogPost.edges.length > 0 ? (
 				<div className="grid gap-4 grid-cols-1 lg:gap-6">
-					{data.allContentfulBlogPost.edges.map(({ node }) => (
-						<Card key={node.id} data={node} />
->>>>>>> 37e33ce8f21bc4b97df6bcf85ec63c7cb5f30ddb
+					{blogs.map(blog => (
+						<Card key={blog.id} data={blog} />
 					))}
 				</div>
 			) : (
