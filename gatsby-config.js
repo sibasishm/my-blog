@@ -16,7 +16,10 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-strapi',
 			options: {
-				apiURL: 'http://localhost:1337',
+				apiURL:
+					process.env.NODE_ENV === 'development'
+						? 'http://localhost:1337'
+						: 'https://dry-crag-01905.herokuapp.com',
 				queryLimit: 1000,
 				contentTypes: ['blogs']
 			}
