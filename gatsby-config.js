@@ -1,7 +1,3 @@
-require('dotenv').config({
-	path: `.env.${process.env.NODE_ENV}`
-});
-
 module.exports = {
 	siteMetadata: {
 		title: 'The Righter',
@@ -13,14 +9,12 @@ module.exports = {
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
+		'gatsby-plugin-netlify-cms',
 		{
-			resolve: 'gatsby-source-strapi',
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				apiURL: process.env.DEPLOY_URL
-					? 'https://dry-crag-01905.herokuapp.com'
-					: 'http://localhost:1337',
-				queryLimit: 1000,
-				contentTypes: ['blogs']
+				name: 'markdown-pages',
+				path: `${__dirname}/blog`
 			}
 		}
 	]

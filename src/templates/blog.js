@@ -1,32 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import ReactMarkdown from 'react-markdown';
 
 import Layout from '../components/Layout';
-import Head from '../components/Head';
 
-export const query = graphql`
-	query GetABlog($slug: String) {
-		blog: strapiBlogs(slug: { eq: $slug }) {
-			title
-			content
-		}
-	}
-`;
-
-const Blog = ({ data: { blog } }) => {
-	const { title, content } = blog;
-	return (
-		<Layout>
-			<Head title={title} />
-			<section>
-				<h1>{title}</h1>
-				<article>
-					<ReactMarkdown source={content} />
-				</article>
-			</section>
-		</Layout>
-	);
+const Blog = () => {
+	return <Layout></Layout>;
 };
 
 export default Blog;

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "SET GATSBY_GRAPHQL_IDE=playground&& gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -16,11 +16,12 @@
   "dependencies": {
     "gatsby": "^2.21.37",
     "gatsby-image": "^2.4.7",
+    "gatsby-plugin-netlify-cms": "^4.3.5",
     "gatsby-plugin-postcss": "^2.3.2",
     "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-sharp": "^2.6.11",
-    "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.5.5",
+    "netlify-cms-app": "^2.12.14",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
