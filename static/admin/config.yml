@@ -13,7 +13,6 @@ collections:
       label: 'Blog'
       folder: 'content/blogs'
       create: true
-      slug: '{{name}}'
       fields:
           - { name: 'title', label: 'Title', widget: 'string' }
           - { name: 'publishedDate', label: Published Date, widget: 'datetime' }
