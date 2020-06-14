@@ -1,0 +1,22 @@
+backend:
+    name: github
+    repo: Sibasish19/my-blog
+    branch: master
+
+media_folder: static/assets
+public_folder: /assets
+
+publish_mode: editorial_workflow
+
+collections:
+    - name: 'blogs'
+      label: 'Blog'
+      folder: 'content/blogs'
+      create: true
+      slug: '{{name}}'
+      fields:
+          - { name: 'title', label: 'Title', widget: 'string' }
+          - { name: 'publishedDate', label: Published Date, widget: 'datetime' }
+          - { name: 'thumbnail', label: 'Cover Image', widget: 'image' }
+          - { name: 'summary', label: 'Summary', widget: 'text' }
+          - { name: 'content', label: 'Content', widget: 'markdown' }
