@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
-const Header = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			site {
-				siteMetadata {
-					title
-				}
+const query = graphql`
+	query {
+		site {
+			siteMetadata {
+				title
 			}
 		}
-	`);
+	}
+`;
+
+const Header = () => {
+	const data = useStaticQuery(query);
 	return (
 		<header>
 			<h1 className="text-4xl tracking-wider">

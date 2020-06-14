@@ -9,13 +9,18 @@ module.exports = {
 		description: 'My blog website'
 	},
 	plugins: [
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-sharp',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-postcss',
 		{
-			resolve: 'gatsby-source-contentful',
+			resolve: 'gatsby-source-strapi',
 			options: {
-				spaceId: process.env.CONTENTFUL_SPACE_ID,
-				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+				apiURL: process.env.DEPLOY_URL
+					? 'https://dry-crag-01905.herokuapp.com'
+					: 'http://localhost:1337',
+				queryLimit: 1000,
+				contentTypes: ['blogs']
 			}
 		}
 	]
