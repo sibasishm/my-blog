@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-const Card = ({ title, fields, summary, publishedDate, thumbnail }) => {
+const Card = ({ title, summary, publishedDate, thumbnail, link }) => {
 	return (
 		<div className="flex">
-			<Image fluid={thumbnail} className="hidden lg:block lg:w-2/5" />
+			<Image
+				fluid={thumbnail.childImageSharp.fluid}
+				className="hidden lg:block lg:w-2/5"
+			/>
 			<div className="relative bg-white border rounded-lg overflow-hidden lg:w-3/5 lg:rounded-none">
-				<Image fluid={thumbnail} className="lg:hidden" />
+				<Image
+					fluid={thumbnail.childImageSharp.fluid}
+					className="lg:hidden"
+				/>
 				<div className="p-4 lg:p-8">
 					<h3 className="text-xl font-semibold leading-tight lg:text-3xl">
 						{title}
@@ -19,12 +24,9 @@ const Card = ({ title, fields, summary, publishedDate, thumbnail }) => {
 						{summary}
 					</p>
 					<div className="mt-4 lg:mt-8">
-						<Link
-							className="btn btn-blue"
-							to={`blog/${fields.slug}`}
-						>
+						<a className="btn btn-blue" href={`blog/${link}`}>
 							Continue Reading
-						</Link>
+						</a>
 					</div>
 				</div>
 			</div>

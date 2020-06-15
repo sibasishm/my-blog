@@ -2,7 +2,8 @@ module.exports = {
 	siteMetadata: {
 		title: 'The Righter',
 		author: 'Siabsish Mohanty',
-		description: 'My blog website'
+		description: 'My blog website',
+		siteUrl: 'https://amazing-noether-7fb791.netlify.app/'
 	},
 	plugins: [
 		{
@@ -19,11 +20,19 @@ module.exports = {
 				path: `${__dirname}/content/blogs`
 			}
 		},
+		{
+			resolve: 'gatsby-transformer-remark',
+			options: {
+				plugins: [
+					'gatsby-remark-relative-images',
+					'gatsby-remark-images'
+				]
+			}
+		},
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
-		'gatsby-plugin-netlify-cms',
-		'gatsby-transformer-remark'
+		'gatsby-plugin-netlify-cms'
 	]
 };

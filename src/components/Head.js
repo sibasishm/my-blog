@@ -14,7 +14,12 @@ const query = graphql`
 
 const Head = ({ title }) => {
 	const data = useStaticQuery(query);
-	return <Helmet title={`${title} | ${data.site.siteMetadata.title}`} />;
+	return (
+		<Helmet
+			htmlAttributes={{ lang: 'en' }}
+			title={`${title} | ${data.site.siteMetadata.title}`}
+		/>
+	);
 };
 
 export default Head;
