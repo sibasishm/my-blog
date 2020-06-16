@@ -29,7 +29,7 @@ const Card = ({ title, summary, publishedDate, thumbnail, link }) => {
 						{summary}
 					</p>
 					<div className="mt-4 lg:mt-8">
-						<a className="btn btn-blue" href={`blog/${link}`}>
+						<a className="btn btn-blue" href={`/blog/${link}`}>
 							Continue Reading
 						</a>
 					</div>

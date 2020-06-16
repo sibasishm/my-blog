@@ -1,7 +1,14 @@
 backend:
-    name: github
+    name: git-gateway
     repo: Sibasish19/my-blog
     branch: master
+    identity_url: 'https://amazing-noether-7fb791.netlify.app/.netlify/identity'
+    gateway_url: 'https://amazing-noether-7fb791.netlify.app/.netlify/git'
+    site_domain: 'https://amazing-noether-7fb791.netlify.app/'
+    squash_merges: true
+
+display_url: https://amazing-noether-7fb791.netlify.app
+# logo_url:
 
 media_folder: static/assets
 public_folder: /assets
@@ -10,16 +17,42 @@ publish_mode: editorial_workflow
 
 collections:
     - name: 'blogs'
-      label: 'Blog'
+      label: 'Blogs'
       folder: 'content/blogs'
       create: true
-      slug: 'index'
       media_folder: ''
       public_folder: ''
       path: '{{title}}/index'
       fields:
-          - { name: 'title', label: 'Title', widget: 'string' }
+          - {
+                name: 'title',
+                label: 'Title',
+                widget: 'string',
+                pattern:
+                    [
+                        '.{10, 40}',
+                        'Must have at least 10 and at max 40 characters.',
+                    ],
+            }
           - { name: 'publishedDate', label: Published Date, widget: 'datetime' }
           - { name: 'thumbnail', label: 'Cover Image', widget: 'image' }
-          - { name: 'summary', label: 'Summary', widget: 'text' }
-          - { name: 'content', label: 'Content', widget: 'markdown' }
+          - {
+                name: 'summary',
+                label: 'Summary',
+                widget: 'text',
+                pattern:
+                    [
+                        '.{200, 400}',
+                        'Must have at least 200 and at max 400 characters.',
+                    ],
+            }
+          - {
+                name: 'content',
+                label: 'Content',
+                widget: 'markdown',
+                pattern:
+                    [
+                        '.{1000, 4000}',
+                        'Must have at least 1000 and at max 4000 characters.',
+                    ],
+            }
