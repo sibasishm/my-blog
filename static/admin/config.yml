@@ -6,6 +6,9 @@ backend:
     gateway_url: 'https://amazing-noether-7fb791.netlify.app/.netlify/git'
     site_domain: 'https://amazing-noether-7fb791.netlify.app/'
     squash_merges: true
+    accept_roles:
+        - admin
+        - editor
 
 display_url: https://amazing-noether-7fb791.netlify.app
 # logo_url:
@@ -30,7 +33,7 @@ collections:
                 widget: 'string',
                 pattern:
                     [
-                        '.{10, 40}',
+                        '.{10,40}',
                         'Must have at least 10 and at max 40 characters.',
                     ],
             }
@@ -42,7 +45,7 @@ collections:
                 widget: 'text',
                 pattern:
                     [
-                        '.{200, 400}',
+                        '.{200,400}',
                         'Must have at least 200 and at max 400 characters.',
                     ],
             }
@@ -52,7 +55,7 @@ collections:
                 widget: 'markdown',
                 pattern:
                     [
-                        '.{1000, 4000}',
+                        '.{1000,4000}',
                         'Must have at least 1000 and at max 4000 characters.',
                     ],
             }
