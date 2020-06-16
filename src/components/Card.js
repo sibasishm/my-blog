@@ -1,20 +1,25 @@
 import React from 'react';
-import Image from 'gatsby-image';
 
 const Card = ({ title, summary, publishedDate, thumbnail, link }) => {
 	return (
 		<div className="flex">
-			<Image
-				fluid={thumbnail.childImageSharp.fluid}
-				className="hidden lg:block lg:w-2/5"
-			/>
-			<div className="relative bg-white border rounded-lg overflow-hidden lg:w-3/5 lg:rounded-none">
-				<Image
-					fluid={thumbnail.childImageSharp.fluid}
-					className="lg:hidden"
+			<div className="hidden lg:block lg:w-2/5 lg:relative">
+				<img
+					src={thumbnail}
+					alt={title}
+					className="absolute inset-0 w-full h-full object-cover"
 				/>
-				<div className="p-4 lg:p-8">
-					<h3 className="text-xl font-semibold leading-tight lg:text-3xl">
+			</div>
+			<div className="bg-white border rounded-lg overflow-hidden lg:w-3/5 lg:rounded-none">
+				<div className="relative bg-gray-500 pb-2/3 lg:hidden">
+					<img
+						src={thumbnail}
+						alt={title}
+						className="absolute w-full h-full object-cover"
+					/>
+				</div>
+				<div className="px-4 py-6 lg:px-8 lg:py-16">
+					<h3 className="text-2xl font-semibold leading-tight lg:text-4xl">
 						{title}
 					</h3>
 					<p className="mt-1 text-gray-500 text-sm lg:text-base">
