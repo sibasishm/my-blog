@@ -20,14 +20,10 @@ content: >-
   Chinese FDI into India is small at $6.2 billion, but its impact is already outsized, given the increasing penetration of tech in India, the report says. “Chinese funding to Indian tech start-ups is making an impact disproportionate to its value, given the deepening penetration of technology across sectors in India. TikTok, owned by ByteDance, is already one of the most popular apps in India, overtaking YouTube; Xiaomi handsets are bigger than Samsung smartphones; Huawei routers are widely used. These are investments made by nearly two dozen Chinese tech companies and funds, led by giants like Alibaba, ByteDance and Tencent which have funded 92 Indian start-ups, including unicorns such as Paytm, Byju’s, Oyo and Ola. China is embedded in Indian society, the economy, and the technology ecosystem that influences it,” the report said.
 
 
-
-
   ![red flower decor](nikunj-gupta-x4sqx9iumbi-unsplash.jpg "Photo by Nikunj Gupta on Unsplash")
 
 
-
-
-  The report says that unlike a port or a railway line, Chinese tech investments are invisible assets in small sizes – rarely over $100 million – and made by the private sector, which doesn’t cause immediate alarm. All this adds up to just 1.5% of the total official Chinese (including Hong Kong) FDI intoIndia.Thisdoesn’t cover investments made by funds based out of Singapore and elsewhere, where the ultimate owner is Chinese, so the actual investment in India will be higher.
+  The report says that unlike a port or a railway line, Chinese tech investments are invisible assets in small sizes – rarely over $100 million – and made by the private sector, which doesn’t cause immediate alarm. All this adds up to just 1.5% of the total official Chinese (including Hong Kong) FDI into India.This doesn’t cover investments made by funds based out of Singapore and elsewhere, where the ultimate owner is Chinese, so the actual investment in India will be higher.
 
 
   The single largest Chinese investment in India is the $1.1 billion acquisition of Gland Pharma by Fosun in 2018. This accounts for 17.7% of all Chinese FDI into India, but it is unique, the report said. Gateway House identified just five other investments by Chinese companies which exceed $100 million. This includes the $300-million investment by MG Motors. China is most active in India in the start-up space. Gateway House has identified over 75 companies, with Chinese investors concentrated in e-commerce, fintech, media/social media, aggregation services and logistics. A majority – more than half – of India’s 30 Indian unicorns (start-ups with valuation of over $1 billion) have a Chinese investor.
