@@ -5,7 +5,7 @@ thumbnail: karthik-chandran-4e0pvfhclni-unsplash.jpg
 summary: On television, a fair woman walking down the street runs for cover as
   the sun hits her face. The voiceover says, “Protect your whiteness from the
   harmful rays of the sun.” In print ads for hair transplants and liposuction,
-  the “before” picture is invariably of a dark-skinned Indian, but after the
+  the “before” picture is invariable of a dark-skinned Indian, but after the
   operation, the subject is thinner, with more hair, and decidedly whiter.
 content: >-
   #### How then does this inbuilt desire reflect in civic reality?
