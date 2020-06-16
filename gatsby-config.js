@@ -9,22 +9,17 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: 'images',
 				path: `${__dirname}/content/blogs`
 			}
 		},
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'markdown-pages',
-				path: `${__dirname}/content/blogs`
-			}
-		},
+		'gatsby-plugin-postcss',
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
 		{
 			resolve: 'gatsby-transformer-remark',
 			options: {
 				plugins: [
-					'gatsby-remark-relative-images',
 					{
 						resolve: 'gatsby-remark-images',
 						options: {
@@ -35,10 +30,6 @@ module.exports = {
 				]
 			}
 		},
-		'gatsby-plugin-postcss',
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
 		'gatsby-plugin-netlify-cms'
 	]
 };

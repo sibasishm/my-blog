@@ -7,7 +7,9 @@ import Card from '../components/Card';
 
 const query = graphql`
 	query GetAllBlogs {
-		allMarkdownRemark {
+		allMarkdownRemark(
+			sort: { fields: [frontmatter___publishedDate], order: DESC }
+		) {
 			edges {
 				node {
 					id
@@ -15,7 +17,7 @@ const query = graphql`
 						title
 						publishedDate(formatString: "MMM Do, YYYY")
 						summary
-						thumbnail {
+						banner {
 							childImageSharp {
 								fluid {
 									...GatsbyImageSharpFluid

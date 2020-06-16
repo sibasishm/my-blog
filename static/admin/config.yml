@@ -28,6 +28,12 @@ collections:
       path: '{{title}}/index'
       fields:
           - {
+                label: 'Layout',
+                name: 'layout',
+                widget: 'hidden',
+                default: 'blogs',
+            }
+          - {
                 name: 'title',
                 label: 'Title',
                 widget: 'string',
@@ -37,20 +43,47 @@ collections:
                         'Must have at least 10 and at max 40 characters',
                     ],
             }
-          - { name: 'publishedDate', label: Published Date, widget: 'datetime' }
-          - { name: 'thumbnail', label: 'Cover Image', widget: 'image' }
+          - { name: 'publishedDate', label: Published date, widget: 'datetime' }
+          - {
+                name: 'author',
+                label: 'Author',
+                widget: 'string',
+                default: 'Siabsish Mohanty',
+            }
+          - { name: 'banner', label: 'Cover image', widget: 'image' }
+          - {
+                name: 'bannerCredit',
+                label: 'Image Credit',
+                widget: 'markdown',
+                required: false,
+            }
+          - {
+                name: 'category',
+                label: 'Select a category',
+                widget: 'select',
+                options:
+                    [
+                        'Technology',
+                        'Observation',
+                        'Motivation',
+                        'Story',
+                        'Politics',
+                        'Cartoon',
+                    ],
+            }
           - {
                 name: 'summary',
                 label: 'Summary',
                 widget: 'text',
                 pattern:
                     [
-                        '.{200,400}',
-                        'Must have at least 200 and at max 400 characters',
+                        '.{100,250}',
+                        'Must have at least 100 and at max 250 characters',
                     ],
             }
+          - { name: 'keywords', label: 'Tags', widget: 'list' }
           - {
-                name: 'content',
+                name: 'body',
                 label: 'Content',
                 widget: 'markdown',
                 pattern:

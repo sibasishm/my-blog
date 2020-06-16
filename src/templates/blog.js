@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import DOMPurify from 'dompurify';
 import { graphql } from 'gatsby';
 
 import Head from '../components/Head';
@@ -11,8 +11,8 @@ export const query = graphql`
 			frontmatter {
 				title
 				publishedDate(formatString: "MMM Do, YYYY")
-				content
 			}
+			html
 		}
 	}
 `;
@@ -20,7 +20,8 @@ export const query = graphql`
 const Blog = ({ data }) => {
 	const {
 		markdownRemark: {
-			frontmatter: { title, content, publishedDate }
+			frontmatter: { title, publishedDate },
+			html
 		}
 	} = data;
 	return (
@@ -28,9 +29,9 @@ const Blog = ({ data }) => {
 			<Head title={title} />
 			<h1>{title}</h1>
 			<p>Published on: {publishedDate}</p>
-			<article>
-				<ReactMarkdown source={content} />
-			</article>
+			<article
+				dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+			></article>
 		</Layout>
 	);
 };

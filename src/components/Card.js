@@ -1,16 +1,22 @@
 import React from 'react';
 import Image from 'gatsby-image';
 
-const Card = ({ title, summary, publishedDate, thumbnail, link }) => {
+const Card = ({ title, summary, publishedDate, banner, link }) => {
 	return (
 		<div className="flex">
 			<Image
-				fluid={thumbnail.childImageSharp.fluid}
+				sizes={{
+					...banner.childImageSharp.fluid,
+					aspectRatio: 21 / 9
+				}}
 				className="hidden lg:block lg:w-2/5 object-cover"
 			/>
 			<div className="bg-white border rounded-lg overflow-hidden lg:w-3/5 lg:rounded-none">
 				<Image
-					fluid={thumbnail.childImageSharp.fluid}
+					sizes={{
+						...banner.childImageSharp.fluid,
+						aspectRatio: 3 / 2
+					}}
 					className="lg:hidden object-cover"
 				/>
 				<div className="px-4 py-6 lg:px-8 lg:py-16">
