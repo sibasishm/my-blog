@@ -13,6 +13,10 @@ collections:
       label: 'Blog'
       folder: 'content/blogs'
       create: true
+      slug: 'index'
+      media_folder: ''
+      public_folder: ''
+      path: '{{title}}/index'
       fields:
           - { name: 'title', label: 'Title', widget: 'string' }
           - { name: 'publishedDate', label: Published Date, widget: 'datetime' }

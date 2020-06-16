@@ -15,13 +15,7 @@ const query = graphql`
 						title
 						publishedDate(formatString: "MMM Do, YYYY")
 						summary
-						thumbnail {
-							childImageSharp {
-								fluid {
-									...GatsbyImageSharpFluid_noBase64
-								}
-							}
-						}
+						thumbnail
 					}
 					fields {
 						slug
@@ -41,10 +35,11 @@ const Blog = () => {
 		<Layout>
 			<Head title="Blog" />
 			<h1>This is my blog page.</h1>
-			<p>All the blog posts will be listed here.</p>
-			{blogs.map(({ node: { id, frontmatter, fields } }) => (
-				<Card key={id} link={fields.slug} {...frontmatter} />
-			))}
+			<section className="grid gap-4 grid-cols-1 lg:gap-6">
+				{blogs.map(({ node: { id, frontmatter, fields } }) => (
+					<Card key={id} link={fields.slug} {...frontmatter} />
+				))}
+			</section>
 		</Layout>
 	);
 };
