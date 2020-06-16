@@ -43,7 +43,7 @@ const Blog = () => {
 		<Layout>
 			<Head title="Blog" />
 			<h1>This is my blog page.</h1>
-			<section className="grid gap-4 grid-cols-1 lg:gap-6">
+			<section>
 				{blogs.map(({ node: { id, frontmatter, fields } }) => (
 					<Card key={id} link={fields.slug} {...frontmatter} />
 				))}
