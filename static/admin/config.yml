@@ -34,7 +34,7 @@ collections:
                 pattern:
                     [
                         '.{10,40}',
-                        'Must have at least 10 and at max 40 characters.',
+                        'Must have at least 10 and at max 40 characters',
                     ],
             }
           - { name: 'publishedDate', label: Published Date, widget: 'datetime' }
@@ -46,7 +46,7 @@ collections:
                 pattern:
                     [
                         '.{200,400}',
-                        'Must have at least 200 and at max 400 characters.',
+                        'Must have at least 200 and at max 400 characters',
                     ],
             }
           - {
@@ -55,7 +55,7 @@ collections:
                 widget: 'markdown',
                 pattern:
                     [
-                        '.{1000,4000}',
-                        'Must have at least 1000 and at max 4000 characters.',
+                        '.[\S\s]{1000,4000}',
+                        'Must have at least 1000 and at max 4000 characters',
                     ],
             }
