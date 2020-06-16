@@ -10,7 +10,7 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'images',
-				path: `${__dirname}/static/assets`
+				path: `${__dirname}/content/blogs`
 			}
 		},
 		{
@@ -25,7 +25,13 @@ module.exports = {
 			options: {
 				plugins: [
 					'gatsby-remark-relative-images',
-					'gatsby-remark-images'
+					{
+						resolve: 'gatsby-remark-images',
+						options: {
+							backgroundColor: '#fafafa',
+							maxWidth: 1035
+						}
+					}
 				]
 			}
 		},

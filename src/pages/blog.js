@@ -15,7 +15,13 @@ const query = graphql`
 						title
 						publishedDate(formatString: "MMM Do, YYYY")
 						summary
-						thumbnail
+						thumbnail {
+							childImageSharp {
+								fluid {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 					}
 					fields {
 						slug
