@@ -1,5 +1,5 @@
 import React from 'react';
-import DOMPurify from 'dompurify';
+import sanitizeHTML from 'sanitize-html';
 import { graphql } from 'gatsby';
 
 import Head from '../components/Head';
@@ -24,6 +24,7 @@ const Blog = ({ data }) => {
 			html
 		}
 	} = data;
+	const sanitizedHTML = sanitizeHTML(html);
 	return (
 		<Layout>
 			<Head title={title} />
@@ -35,7 +36,7 @@ const Blog = ({ data }) => {
 			</p>
 			<article
 				className="mt-4 leading-relaxed"
-				dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+				dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
 			></article>
 		</Layout>
 	);
