@@ -1,5 +1,5 @@
 import React from 'react';
-import sanitizeHTML from 'sanitize-html';
+// import sanitizeHTML from 'sanitize-html';
 import { graphql } from 'gatsby';
 
 import Head from '../components/Head';
@@ -24,7 +24,9 @@ const Blog = ({ data }) => {
 			html
 		}
 	} = data;
-	const sanitizedHTML = sanitizeHTML(html);
+	// const sanitizedHTML = sanitizeHTML(html, {
+	// 	allowedTags: sanitizeHTML.defaults.allowedTags.concat(['img'])
+	// });
 	return (
 		<Layout>
 			<Head title={title} />
@@ -36,7 +38,7 @@ const Blog = ({ data }) => {
 			</p>
 			<article
 				className="mt-4 leading-relaxed"
-				dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+				dangerouslySetInnerHTML={{ __html: html }}
 			></article>
 		</Layout>
 	);
