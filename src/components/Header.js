@@ -19,31 +19,31 @@ const Header = () => {
 				{data.site.siteMetadata.title}
 			</h1>
 			<nav>
-				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 tracking-wide">
+				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 text-lg tracking-wide">
 					<Link
 						to="/"
-						className="p-4 lg:px-16 hover:text-gray-700"
+						className="p-4 lg:px-16 hover:text-gray-800"
 						activeClassName="text-gray-900 font-bold"
 					>
 						Home
 					</Link>
 					<Link
 						to="/blog"
-						className="p-4 lg:px-16 hover:text-gray-700"
+						className="p-4 lg:px-16 hover:text-gray-800"
 						activeClassName="text-gray-900 font-bold"
 					>
 						Blogs
 					</Link>
 					<Link
 						to="/about"
-						className="p-4 lg:px-16 hover:text-gray-700"
+						className="p-4 lg:px-16 hover:text-gray-800"
 						activeClassName="text-gray-900 font-bold"
 					>
 						About
 					</Link>
 					<Link
 						to="/contact"
-						className="p-4 lg:px-16 hover:text-gray-700"
+						className="p-4 lg:px-16 hover:text-gray-800"
 						activeClassName="text-gray-900 font-bold"
 					>
 						Contact
