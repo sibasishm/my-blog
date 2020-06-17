@@ -14,12 +14,24 @@ const query = graphql`
 const Footer = () => {
 	const data = useStaticQuery(query);
 	return (
-		<footer>
+		<footer className="bg-gray-800 text-gray-500 mt-8 py-16 text-center">
 			<div>
-				Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and{' '}
-				<a href="http://strapi.io">Strapi</a>
+				Built with{' '}
+				<a href="https://www.gatsbyjs.org" className="text-gray-200">
+					Gatsby
+				</a>{' '}
+				and{' '}
+				<a href="https://www.netlifycms.org/" className="text-gray-200">
+					Netlify CMS
+				</a>
 			</div>
-			<p>Handcrafted by {data.site.siteMetadata.author}, &copy; 2020</p>
+			<p className="mt-2">
+				Handcrafted by{' '}
+				<span className="text-gray-200">
+					{data.site.siteMetadata.author}
+				</span>
+				, &copy; 2020
+			</p>
 		</footer>
 	);
 };

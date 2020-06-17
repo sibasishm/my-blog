@@ -7,7 +7,9 @@ import Card from '../components/Card';
 
 const query = graphql`
 	query GetAllBlogs {
-		allMarkdownRemark {
+		allMarkdownRemark(
+			sort: { fields: [frontmatter___publishedDate], order: DESC }
+		) {
 			edges {
 				node {
 					id
@@ -15,7 +17,7 @@ const query = graphql`
 						title
 						publishedDate(formatString: "MMM Do, YYYY")
 						summary
-						thumbnail {
+						banner {
 							childImageSharp {
 								fluid {
 									...GatsbyImageSharpFluid
@@ -40,8 +42,8 @@ const Blog = () => {
 	return (
 		<Layout>
 			<Head title="Blog" />
-			<h1>This is my blog page.</h1>
-			<section className="grid gap-4 grid-cols-1 lg:gap-6">
+			<h1>All Blogposts</h1>
+			<section>
 				{blogs.map(({ node: { id, frontmatter, fields } }) => (
 					<Card key={id} link={fields.slug} {...frontmatter} />
 				))}

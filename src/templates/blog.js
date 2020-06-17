@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+// import sanitizeHTML from 'sanitize-html';
 import { graphql } from 'gatsby';
 
 import Head from '../components/Head';
@@ -11,8 +11,8 @@ export const query = graphql`
 			frontmatter {
 				title
 				publishedDate(formatString: "MMM Do, YYYY")
-				content
 			}
+			html
 		}
 	}
 `;
@@ -20,17 +20,26 @@ export const query = graphql`
 const Blog = ({ data }) => {
 	const {
 		markdownRemark: {
-			frontmatter: { title, content, publishedDate }
+			frontmatter: { title, publishedDate },
+			html
 		}
 	} = data;
+	// const sanitizedHTML = sanitizeHTML(html, {
+	// 	allowedTags: sanitizeHTML.defaults.allowedTags.concat(['img'])
+	// });
 	return (
 		<Layout>
 			<Head title={title} />
-			<h1>{title}</h1>
-			<p>Published on: {publishedDate}</p>
-			<article>
-				<ReactMarkdown source={content} />
-			</article>
+			<h1 className="text-2xl font-semibold leading-tight lg:text-4xl">
+				{title}
+			</h1>
+			<p className="mt-1 text-gray-500 text-sm lg:text-base">
+				Published on: {publishedDate}
+			</p>
+			<article
+				className="mt-4 leading-relaxed"
+				dangerouslySetInnerHTML={{ __html: html }}
+			></article>
 		</Layout>
 	);
 };
