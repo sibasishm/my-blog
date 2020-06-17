@@ -42,7 +42,7 @@ const Blog = () => {
 	return (
 		<Layout>
 			<Head title="Blog" />
-			<h1>This is my blog page.</h1>
+			<h1>All Blogposts</h1>
 			<section>
 				{blogs.map(({ node: { id, frontmatter, fields } }) => (
 					<Card key={id} link={fields.slug} {...frontmatter} />
