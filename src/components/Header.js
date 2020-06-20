@@ -19,7 +19,7 @@ const Header = () => {
 				{data.site.siteMetadata.title}
 			</h1>
 			<nav>
-				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 text-lg tracking-wide">
+				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 lg:text-lg tracking-wide">
 					<Link
 						to="/"
 						className="p-4 lg:px-16 hover:text-gray-800"

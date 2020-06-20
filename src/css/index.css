@@ -18,6 +18,16 @@ h3 {
     @apply text-lg font-display;
 }
 
+article {
+    display: grid;
+    gap: 10px 20px;
+    grid-template-columns: 3fr 12fr 5fr;
+}
+
+article>* {
+    grid-column: 2 / -2;
+}
+
 @tailwind components;
 
 @tailwind utilities;

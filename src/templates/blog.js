@@ -30,16 +30,18 @@ const Blog = ({ data }) => {
 	return (
 		<Layout>
 			<Head title={title} />
-			<h1 className="text-2xl font-semibold leading-tight lg:text-4xl">
-				{title}
-			</h1>
-			<p className="mt-1 text-gray-500 text-sm lg:text-base">
-				Published on: {publishedDate}
-			</p>
-			<article
-				className="mt-4 leading-relaxed"
-				dangerouslySetInnerHTML={{ __html: html }}
-			></article>
+			<article>
+				<h1 className="text-2xl font-semibold leading-tight lg:text-4xl">
+					{title}
+				</h1>
+				<p className="mt-1 text-gray-500 text-sm lg:text-base">
+					Published on: {publishedDate}
+				</p>
+				<div
+					className="mt-4 leading-relaxed"
+					dangerouslySetInnerHTML={{ __html: html }}
+				></div>
+			</article>
 		</Layout>
 	);
 };
