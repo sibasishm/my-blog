@@ -1,5 +1,4 @@
 import React from 'react';
-// import sanitizeHTML from 'sanitize-html';
 import { graphql } from 'gatsby';
 
 import Head from '../components/Head';
@@ -24,24 +23,19 @@ const Blog = ({ data }) => {
 			html
 		}
 	} = data;
-	// const sanitizedHTML = sanitizeHTML(html, {
-	// 	allowedTags: sanitizeHTML.defaults.allowedTags.concat(['img'])
-	// });
 	return (
 		<Layout>
 			<Head title={title} />
-			<article>
-				<h1 className="text-2xl font-semibold leading-tight lg:text-4xl">
-					{title}
-				</h1>
-				<p className="mt-1 text-gray-500 text-sm lg:text-base">
-					Published on: {publishedDate}
-				</p>
-				<div
-					className="mt-4 leading-relaxed"
-					dangerouslySetInnerHTML={{ __html: html }}
-				></div>
-			</article>
+			<h1 className="text-2xl font-semibold leading-tight lg:text-4xl">
+				{title}
+			</h1>
+			<p className="mt-1 text-gray-500 text-sm lg:text-base">
+				Published on: {publishedDate}
+			</p>
+			<article
+				className="leading-relaxed"
+				dangerouslySetInnerHTML={{ __html: html }}
+			></article>
 		</Layout>
 	);
 };
