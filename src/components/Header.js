@@ -15,7 +15,7 @@ const Header = () => {
 	const data = useStaticQuery(query);
 	return (
 		<header>
-			<h1 className="uppercase text-5xl md:text-7xl tracking-widest text-center">
+			<h1 className="uppercase text-5xl md:text-6xl lg:text-7xl tracking-widest text-center">
 				{data.site.siteMetadata.title}
 			</h1>
 			<nav>
