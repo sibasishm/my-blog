@@ -15,11 +15,11 @@ module.exports = {
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
 		{
 			resolve: 'gatsby-transformer-remark',
 			options: {
 				plugins: [
-					'gatsby-remark-relative-images',
 					{
 						resolve: 'gatsby-remark-images',
 						options: {
