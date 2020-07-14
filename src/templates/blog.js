@@ -53,7 +53,7 @@ const Blog = ({ data }) => {
 					className="mt-4"
 				/>
 				<article
-					className="container mx-auto px-4 md:px-12 md:text-lg leading-relaxed"
+					className="prose lg:prose-xl"
 					dangerouslySetInnerHTML={{ __html: html }}
 				></article>
 			</section>

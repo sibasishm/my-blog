@@ -3,60 +3,33 @@
 @tailwind base;
 
 body {
-	@apply antialiased text-gray-900 font-body bg-gray-100;
+    @apply antialiased text-gray-900 font-body bg-gray-100;
 }
 
 h1 {
-	@apply text-2xl font-black font-display tracking-wide;
+    @apply text-2xl font-black font-display tracking-wide;
 }
 
 h2 {
-	@apply text-xl font-bold font-display;
+    @apply text-xl font-bold font-display;
 }
 
 h3 {
-	@apply text-lg font-display;
-}
-
-/* article {
-	display: grid;
-	gap: 10px 20px;
-	grid-template-columns: 1fr 12fr 3fr;
-}
-
-article > * {
-	grid-column: 2 / -2;
-}
-
-article > figure {
-	grid-column: 1 / -1;
-} */
-
-figcaption {
-	@apply text-sm;
-}
-
-article > blockquote {
-	grid-column: 1 / -1;
-	@apply text-4xl m-0 italic;
-}
-
-article > p {
-	@apply mt-4;
+    @apply text-lg font-display;
 }
 
 @tailwind components;
 
-@tailwind utilities;
-
 .btn {
-	@apply inline-block py-3 px-5 rounded text-sm tracking-wider font-semibold uppercase;
+    @apply inline-block py-3 px-5 rounded text-sm tracking-wider font-semibold uppercase;
 }
 
 .btn-blue {
-	@apply bg-blue-500 text-white;
+    @apply bg-blue-500 text-white;
 }
 
 .btn-blue:hover {
-	@apply bg-blue-700;
+    @apply bg-blue-700;
 }
+
+@tailwind utilities;
