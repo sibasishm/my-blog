@@ -20,8 +20,6 @@ h3 {
 
 @tailwind components;
 
-@tailwind utilities;
-
 .btn {
     @apply inline-block py-3 px-5 rounded text-sm tracking-wider font-semibold uppercase;
 }
@@ -33,3 +31,5 @@ h3 {
 .btn-blue:hover {
     @apply bg-blue-700;
 }
+
+@tailwind utilities;

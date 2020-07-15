@@ -15,11 +15,11 @@ const Header = () => {
 	const data = useStaticQuery(query);
 	return (
 		<header>
-			<h1 className="uppercase text-5xl md:text-7xl tracking-widest text-center">
+			<h1 className="uppercase text-5xl md:text-6xl lg:text-7xl tracking-widest text-center">
 				{data.site.siteMetadata.title}
 			</h1>
 			<nav>
-				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 text-lg tracking-wide">
+				<div className="flex justify-evenly border-2 border-r-0 border-l-0 border-gray-900 text-gray-600 lg:text-lg tracking-wide">
 					<Link
 						to="/"
 						className="p-4 lg:px-16 hover:text-gray-800"
